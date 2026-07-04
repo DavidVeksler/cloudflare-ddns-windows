@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>CloudflareDdns.Gui</RootNamespace>
+    <AssemblyName>CloudflareDdns.Gui</AssemblyName>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <!-- The GUI reuses the service's own logic, so it needs the same target OS moniker. -->
+    <Product>Cloudflare DDNS Control Panel</Product>
+    <AssemblyTitle>Cloudflare DDNS Control Panel</AssemblyTitle>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Reuse the EXACT sync logic the Windows Service runs: PublicIpProvider, HostnameProvider,
+         CloudflareClient, DdnsUpdater, StateStore, DdnsOptions. No duplicated behavior. -->
+    <ProjectReference Include="..\CloudflareDdns.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Query/start/stop the installed Windows Service. -->
+    <PackageReference Include="System.ServiceProcess.ServiceController" Version="8.0.1" />
+    <!-- Serilog primitives for the in-app live log sink (Serilog itself flows in via the project ref). -->
+    <PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
+  </ItemGroup>
+
+</Project>

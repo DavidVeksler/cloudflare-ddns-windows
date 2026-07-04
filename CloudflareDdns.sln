@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudflareDdns", "CloudflareDdns.csproj", "{14AE756E-AF63-4D87-A356-31CBD3461F63}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "gui", "gui", "{9824AA2D-9169-1FBC-8A83-7227C72EA239}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudflareDdns.Gui", "gui\CloudflareDdns.Gui.csproj", "{A5BE81F8-3ED8-42CA-A38A-12A9A1B5D5D6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{14AE756E-AF63-4D87-A356-31CBD3461F63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14AE756E-AF63-4D87-A356-31CBD3461F63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14AE756E-AF63-4D87-A356-31CBD3461F63}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{14AE756E-AF63-4D87-A356-31CBD3461F63}.Debug|x64.Build.0 = Debug|Any CPU
+		{14AE756E-AF63-4D87-A356-31CBD3461F63}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{14AE756E-AF63-4D87-A356-31CBD3461F63}.Debug|x86.Build.0 = Debug|Any CPU
+		{14AE756E-AF63-4D87-A356-31CBD3461F63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14AE756E-AF63-4D87-A356-31CBD3461F63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14AE756E-AF63-4D87-A356-31CBD3461F63}.Release|x64.ActiveCfg = Release|Any CPU
+		{14AE756E-AF63-4D87-A356-31CBD3461F63}.Release|x64.Build.0 = Release|Any CPU
+		{14AE756E-AF63-4D87-A356-31CBD3461F63}.Release|x86.ActiveCfg = Release|Any CPU
+		{14AE756E-AF63-4D87-A356-31CBD3461F63}.Release|x86.Build.0 = Release|Any CPU
+		{A5BE81F8-3ED8-42CA-A38A-12A9A1B5D5D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5BE81F8-3ED8-42CA-A38A-12A9A1B5D5D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5BE81F8-3ED8-42CA-A38A-12A9A1B5D5D6}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A5BE81F8-3ED8-42CA-A38A-12A9A1B5D5D6}.Debug|x64.Build.0 = Debug|Any CPU
+		{A5BE81F8-3ED8-42CA-A38A-12A9A1B5D5D6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A5BE81F8-3ED8-42CA-A38A-12A9A1B5D5D6}.Debug|x86.Build.0 = Debug|Any CPU
+		{A5BE81F8-3ED8-42CA-A38A-12A9A1B5D5D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5BE81F8-3ED8-42CA-A38A-12A9A1B5D5D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5BE81F8-3ED8-42CA-A38A-12A9A1B5D5D6}.Release|x64.ActiveCfg = Release|Any CPU
+		{A5BE81F8-3ED8-42CA-A38A-12A9A1B5D5D6}.Release|x64.Build.0 = Release|Any CPU
+		{A5BE81F8-3ED8-42CA-A38A-12A9A1B5D5D6}.Release|x86.ActiveCfg = Release|Any CPU
+		{A5BE81F8-3ED8-42CA-A38A-12A9A1B5D5D6}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A5BE81F8-3ED8-42CA-A38A-12A9A1B5D5D6} = {9824AA2D-9169-1FBC-8A83-7227C72EA239}
+	EndGlobalSection
+EndGlobal

@@ -25,6 +25,14 @@
     <PackageReference Include="Serilog.Sinks.EventLog" Version="4.0.0" />
   </ItemGroup>
 
+  <!-- The WPF control-panel lives in gui/ as its own project. Keep it out of the service build. -->
+  <ItemGroup>
+    <Compile Remove="gui\**\*.cs" />
+    <Page Remove="gui\**\*.xaml" />
+    <None Remove="gui\**\*" />
+    <Content Remove="gui\**\*" />
+  </ItemGroup>
+
   <ItemGroup>
     <None Update="appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

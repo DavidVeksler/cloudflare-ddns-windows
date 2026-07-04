@@ -15,6 +15,42 @@ Every hour it:
 
 It only ever talks to Cloudflare when your IP changes, so it's gentle on the API.
 
+There are two ways to drive it:
+
+- **The Windows Service** — the headless background worker described below (`install.ps1`).
+- **The Control Panel** — a **WPF desktop GUI** (`gui/`) for configuring, monitoring, and running it by hand.
+
+---
+
+## Desktop control panel (GUI)
+
+A dark-themed WPF app in [`gui/`](gui/) that reuses the **exact same sync services** the Windows
+Service runs — so a "Sync now" or "Dry-run" from the GUI takes the identical code path as the
+scheduled service, and its Serilog output streams live into the app.
+
+```powershell
+.\run-gui.ps1                 # build + launch (Debug)
+.\run-gui.ps1 -Configuration Release
+# or:  dotnet run --project gui/CloudflareDdns.Gui.csproj
+```
+
+It has four tabs:
+
+| Tab | What it does |
+|-----|--------------|
+| **Dashboard** | Big public-IP readout, cached IP + last-checked/updated timestamps, and a live table of every managed hostname → owning zone → current Cloudflare A record, color-coded *up to date / mismatch / missing*. Buttons: **Check IP**, **Sync now**, **Dry-run preview**, **Refresh records**. |
+| **Configuration** | Full UX for the config (see below) — API token (masked, with a **Test token** button that lists visible zones), interval, hostname source, TTL, the Proxied / Create-missing / Dry-run toggles, and add/remove editors for hostnames, excludes, and IP providers. Plus an **Advanced** expander to edit the raw `appsettings.json` / `appsettings.local.json` with JSON validation. |
+| **Activity log** | Live, color-coded Serilog stream of every operation, mirrored to `C:\ProgramData\CloudflareDdns\logs\gui-*.log`. |
+| **Service** | Shows the `CloudflareDdns` service status and **Start / Stop / Restart / Install / Uninstall** (each prompts for elevation via UAC), plus quick "Open folder" shortcuts for the config, logs, and state file. |
+
+**Config UX:** the editor loads the *effective* merged config and writes your changes to
+`appsettings.local.json` (the git-ignored override file where secrets belong). After saving, restart
+the service to apply. The GUI reads/writes config from the **installed** service folder when present,
+otherwise from its own folder — the active path is always shown in the status bar.
+
+> Runs un-elevated so you can watch status at a glance; it only asks for admin when you actually
+> start/stop/install the service.
+
 ---
 
 ## How it works
