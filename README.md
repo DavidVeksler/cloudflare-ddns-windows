@@ -43,6 +43,12 @@ It has four tabs:
 | **Activity log** | Live, color-coded Serilog stream of every operation, mirrored to `C:\ProgramData\CloudflareDdns\logs\gui-*.log`. |
 | **Service** | Shows the `CloudflareDdns` service status and **Start / Stop / Restart / Install / Uninstall** (each prompts for elevation via UAC), plus quick "Open folder" shortcuts for the config, logs, and state file. |
 
+<p align="center">
+  <img src="docs/screenshots/dashboard.png" alt="Dashboard tab" width="32%">
+  <img src="docs/screenshots/configuration.png" alt="Configuration tab" width="32%">
+  <img src="docs/screenshots/service.png" alt="Service tab" width="32%">
+</p>
+
 **Config UX:** the editor loads the *effective* merged config and writes your changes to
 `appsettings.local.json` (the git-ignored override file where secrets belong). After saving, restart
 the service to apply. The GUI reads/writes config from the **installed** service folder when present,
