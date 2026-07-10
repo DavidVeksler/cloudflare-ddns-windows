@@ -1,7 +1,8 @@
 # CloudflareDdns
 
-A free, self-hosted replacement for the **Dynu DDNS service + Dynu IP Update Client** — built as a
-**.NET 8 Windows Service** in C#.
+**Cloudflare Dynamic DNS (DDNS) for Windows** — a free, self-hosted **Windows Service** written in
+**C# / .NET 8** that keeps your **Cloudflare DNS A records** pointed at your home or office's current
+public IP. A free, self-hosted replacement for the **Dynu DDNS service + Dynu IP Update Client**.
 
 Every hour it:
 
