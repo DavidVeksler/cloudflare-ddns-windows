@@ -24,7 +24,7 @@
     <!-- Query/start/stop the installed Windows Service. -->
     <PackageReference Include="System.ServiceProcess.ServiceController" Version="8.0.1" />
     <!-- Serilog primitives for the in-app live log sink (Serilog itself flows in via the project ref). -->
-    <PackageReference Include="Serilog.Sinks.File" Version="6.0.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
   </ItemGroup>
 
 </Project>
